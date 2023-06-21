@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="https://icons.iconarchive.com/icons/blackvariant/button-ui-requests-5/256/ToDo-List-icon.png">
+
+
+</head>
+<body>
+
+    <div class="main-container">
+        <h1>ToDo List</h1>
+
+        <div class="container">
+            <div class="left-container">
+                <div class="input-section">
+                    <input type="text" id="taskInput" placeholder="Enter task">
+                    <button onclick="addItem()" class="btn">Add</button>
+                    <div class="message-section">
+
+                    </div>
+                </div>
+        
+                <div class="undo-redo-button">
+                    <button onclick="undo()" class="btn">Undo</button>
+                    <button onclick="redo()" class="btn">Redo</button>
+                </div>
+            </div>
+        
+            <div class="right-container">
+                <h3>Added tasks</h3>
+                <div class="items-Container">
+                    <div id="taskList">
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <script src="./script.js"></script>
+    
+</body>
+</html>
