@@ -1,6 +1,6 @@
 let todoList = [];  // this is for storing the tasks
-let history = [];   // this array is to store the history of ToDo list changes
-let currentState = -1;
+let history = [[]];   // this array is to store the history of ToDo list changes
+let currentState = 0;
 
 const message = document.getElementsByClassName("message-section")[0];
 
@@ -50,7 +50,6 @@ function failed(){
 function removeItem(index){
         //Remove the task at the specified index
         todoList.splice(index,1);
-
         updateList();
         saveHistory();
 
@@ -59,11 +58,11 @@ function removeItem(index){
 
 //--------function for undo the last action-------
 function undo(){
-    if(currentState > 0){
+    if(currentState >= 0){
         //decrement the currentState
         currentState--;
         todoList = [...history[currentState]];
-
+            
         //update the UI
         updateList();
     }
@@ -71,7 +70,7 @@ function undo(){
 
 //---------Fucntion to redo the last action---------
 function redo(){
-    if(currentState < history.length-1){
+    if(currentState <= history.length-1){
         //Increment the currentState
         currentState++;
 
@@ -113,7 +112,8 @@ function updateList(){
 
 // ----function for undo and redo action-------------------
 function saveHistory(){
-    history = history.slice(0,currentState+1);
+    // history = history.slice(0,currentState+1);
     history.push([...todoList]);
 }
+
 
